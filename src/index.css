@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'https://use.typekit.net/fsy5fjk.css';
+
+@font-face {
+  font-family: gilroy-extrabold;
+  src: url(assets/fonts/gilroy/Gilroy.eot);
+  src: url(assets/fonts/gilroy/Gilroy.eot) format('embedded-opentype'),
+  url(assets/fonts/gilroy/Gilroy.woff2) format('woff2'),
+  url(assets/fonts/gilroy/Gilroy.woff) format('woff'),
+  url(assets/fonts/gilroy/Gilroy.ttf) format('truetype');
+  font-display: swap
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: proxima-nova;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
