@@ -10,7 +10,7 @@ import { ReactComponent as IconLanguages } from "assets/icons/languages.svg";
 import { ReactComponent as IconTimezone } from "assets/icons/timezone.svg";
 import { ReactComponent as IconCulture } from "assets/icons/culture.svg";
 import { ReactComponent as IconEarth } from "assets/icons/earth.svg";
-import { ReactComponent as IconNight } from "assets/icons/night.svg";
+import { ReactComponent as IconCalendarWeather } from "assets/icons/calendar-weather.svg";
 import MyAccordion from "components/shared/myAccordion/MyAccordion";
 
 interface SidebarItem {
@@ -106,22 +106,24 @@ const renderMainContent = () => (
 const renderSidebar = () => (
   <aside className={style.sidebar.container}>
     <h2 className={style.sidebar.title}>Marocco in pillole</h2>
-    {sidebarItems.map(({ icon, title, description }, i) => (
-      <div key={`${i}-${title}`} className={style.sidebar.item}>
-        <div>{icon}</div>
-        <div>
-          <h5 className={style.sidebar.itemTitle}>{title}</h5>
-          {description.map((text, i) => (
-            <span
-              key={`${i}-${text}`}
-              className={style.sidebar.itemDescription}
-            >
-              {text}
-            </span>
-          ))}
+    <div className={style.sidebar.itemContainer}>
+      {sidebarItems.map(({ icon, title, description }, i) => (
+        <div key={`${i}-${title}`} className={style.sidebar.item}>
+          <div>{icon}</div>
+          <div>
+            <h5 className={style.sidebar.itemTitle}>{title}</h5>
+            {description.map((text, i) => (
+              <span
+                key={`${i}-${text}`}
+                className={style.sidebar.itemDescription}
+              >
+                {text}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
     <MyButton
       customClass={style.sidebar.button}
       label="Scopri i nostri viaggi in Marocco"
@@ -133,28 +135,32 @@ const renderSidebar = () => (
 const renderAccordions = () => (
   <div className={style.accordion.container}>
     <MyAccordion
-      icon={<IconNight className={style.accordion.icon} />}
+      icon={<IconCalendarWeather className={style.accordion.icon} />}
       label="Clima durante l’anno"
     >
-      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+      sit amet
     </MyAccordion>
     <MyAccordion
       icon={<IconEarth className={style.accordion.icon} />}
       label="Cose da sapere"
     >
-      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+      sit amet
     </MyAccordion>
     <MyAccordion
       icon={<IconCulture className={style.accordion.icon} />}
       label="Paese che vai usanze che trovi"
     >
-      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+      sit amet
     </MyAccordion>
     <MyAccordion
       icon={<IconFood className={style.accordion.icon} />}
       label="Cibi consigliati"
     >
-      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+      sit amet
     </MyAccordion>
   </div>
 );

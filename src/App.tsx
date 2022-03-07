@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from 'components/navbar/Navbar';
 import Featured from 'components/featured/Featured';
 import Travels from 'components/travels/Travels';

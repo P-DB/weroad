@@ -1,6 +1,6 @@
 import style from './MyButton.style';
 
-type MyButtonType = "PRIMARY" | "PRIMARY-OUTLINE" | "SECONDARY";
+type MyButtonType = "PRIMARY" | "PRIMARY-OUTLINE" | "SECONDARY" | "WHITE";
 
 export interface MyButtonProps {
   label: string;
@@ -15,6 +15,8 @@ const renderType = (type: MyButtonType | undefined) => {
       return style.primaryOutline;
     case "SECONDARY":
       return style.secondary;
+      case "WHITE":
+        return style.white;
     default:
       return style.primary;
   }
