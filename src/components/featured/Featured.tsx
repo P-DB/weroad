@@ -12,6 +12,7 @@ import { ReactComponent as IconCulture } from "assets/icons/culture.svg";
 import { ReactComponent as IconEarth } from "assets/icons/earth.svg";
 import { ReactComponent as IconCalendarWeather } from "assets/icons/calendar-weather.svg";
 import MyAccordion from "components/shared/myAccordion/MyAccordion";
+import Carousel from 'components/shared/carousel/Carousel';
 
 interface SidebarItem {
   icon: JSX.Element;
@@ -173,6 +174,7 @@ function Featured() {
         {renderSidebar()}
         {renderAccordions()}
       </div>
+      <Carousel />
     </section>
   );
 }

@@ -1,22 +1,29 @@
-import style from './MyButton.style';
+import style from "./MyButton.style";
 
-type MyButtonType = "PRIMARY" | "PRIMARY-OUTLINE" | "SECONDARY" | "WHITE";
+type MyButtonType =
+  | "PRIMARY"
+  | "PRIMARY-SMALL"
+  | "PRIMARY-OUTLINE"
+  | "SECONDARY"
+  | "WHITE";
 
 export interface MyButtonProps {
   label: string;
   onClick: () => void;
   type?: MyButtonType;
-  customClass?: string
+  customClass?: string;
 }
 
 const renderType = (type: MyButtonType | undefined) => {
   switch (type) {
     case "PRIMARY-OUTLINE":
       return style.primaryOutline;
+    case "PRIMARY-SMALL":
+      return style.primarySmall;
     case "SECONDARY":
       return style.secondary;
-      case "WHITE":
-        return style.white;
+    case "WHITE":
+      return style.white;
     default:
       return style.primary;
   }
@@ -24,9 +31,10 @@ const renderType = (type: MyButtonType | undefined) => {
 
 function MyButton({ label, onClick, type, customClass }: MyButtonProps) {
   return (
-    <button 
-      className={`${renderType(type)} ${customClass ? ' ' + customClass : ''}`} 
-      onClick={() => onClick()}>
+    <button
+      className={`${renderType(type)} ${customClass ? " " + customClass : ""}`}
+      onClick={() => onClick()}
+    >
       {label}
     </button>
   );

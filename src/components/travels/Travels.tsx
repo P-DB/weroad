@@ -18,8 +18,6 @@ function Travels() {
       });
   }, []);
 
-  console.log(travels);
-
   return (
     <section className={style.travels}>
       <div className={style.container}>
