@@ -1,35 +1,44 @@
-import { useState } from 'react';
-import Collapsible from 'react-collapsible';
-import style from './MyAccordion.style';
+import { useState } from "react";
+import Collapsible from "react-collapsible";
+import style from "./MyAccordion.style";
 import { ReactComponent as IconArrowDown } from "assets/icons/accordion-arrow-down.svg";
 import { ReactComponent as IconArrowUp } from "assets/icons/accordion-arrow-up.svg";
 
 export interface MyAccordionProps {
-  icon: JSX.Element,
-  label: string
-  children: React.ReactNode,
-  customClass?: string
+  header: JSX.Element;
+  children: React.ReactNode;
+  customClass?: string;
+  customHeaderClass?:string;
 }
 
-function MyAccordion({icon, label, children, customClass }: MyAccordionProps) {
-
+function MyAccordion({ header, children, customClass, customHeaderClass }: MyAccordionProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  
+
   const accordionHeader = () => (
-    <div className={style.header} onClick={() => setIsOpen(prevState => !prevState)}>
-      <div className={style.headerContent}>
-        {icon}<span className={style.title}>{label}</span>
-        </div>
-      {isOpen ?  <IconArrowUp /> : <IconArrowDown /> }
+    <div
+      className={`${style.header} ${customHeaderClass ? customHeaderClass : ''}`}
+      onClick={() => setIsOpen((prevState) => !prevState)}
+    >
+      {header}
+      {isOpen ? (
+        <IconArrowUp className={style.iconArrow} />
+      ) : (
+        <IconArrowDown className={style.iconArrow} />
+      )}
     </div>
-  )
+  );
 
   return (
-   <div className={`${style.container} ${customClass ? customClass : ''}`}>
-     <Collapsible open={isOpen} trigger={accordionHeader()}>
-      {children}
-     </Collapsible>
-   </div>
+    <div className={customClass ? customClass : ''}>
+      <Collapsible
+        open={isOpen}
+        trigger={accordionHeader()}
+        transitionTime={300}
+        easing="ease-out"
+      >
+        {children}
+      </Collapsible>
+    </div>
   );
 }
 
