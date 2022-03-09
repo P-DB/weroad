@@ -1,5 +1,5 @@
 const MyButtonStyle = {
-    container:'flex flex-col rounded-xl border border-gray-5 mx-3 mt-7 mb-3 lg:mb-7 px-6 py-7 lg:row-span-2 lg:shadow-lg',
+    container:'flex flex-col rounded-xl border border-gray-5 mx-3 mt-7 mb-3 px-6 py-7 lg:mt-4 lg:mb-7 lg:row-span-2 lg:shadow-lg lg:sticky lg:top-24 lg:self-start',
     title:'text-3xl font-gilroy text-gray-1 mb-6 lg:order-2',
     button:'w-full lg:order-1 lg:mb-7',
     itemContainer:'flex flex-col lg:order-3',

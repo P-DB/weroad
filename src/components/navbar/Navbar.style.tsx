@@ -1,5 +1,5 @@
 const NavbarStyle = {
-    nav: 'border-b border-gray-5',
+    nav: 'bg-white border-b border-gray-5 lg:fixed lg:top-0 lg:left-0 lg:right-0 lg:z-50',
     container : 'flex items-center justify-between max-w-6xl mx-auto pl-3 py-4 pr-4',
     content:'flex items-center',
     find: 'flex items-center ml-2 pl-2 lg:ml-5 lg:pl-4 border-l border-gray-4-200 lg:border-gray-4 hover:cursor-pointer',

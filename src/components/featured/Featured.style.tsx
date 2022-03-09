@@ -1,6 +1,6 @@
 const FeaturedStyle = {
   featured:"mt-10 relative",
-  container:"flex flex-col max-w-6xl mx-auto lg:grid lg:grid-cols-3 lg:auto-rows-fr lg:grid-rows-[min-content] lg:gap-x-12 lg:items-start",
+  container:"flex flex-col max-w-6xl mx-auto lg:h-[1500px] lg:grid lg:grid-cols-3 lg:auto-rows-fr lg:grid-rows-[min-content] lg:gap-x-12 lg:items-start",
   wrapper: "flex flex-col lg:col-span-2",
   title: "text-center text-4xl font-gilroy text-gray-1 lg:text-left",
   subtitle: "text-center mb-2.5 lg:text-left",
