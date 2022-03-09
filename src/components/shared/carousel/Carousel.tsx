@@ -1,26 +1,27 @@
-import Slider from "react-slick";
-import MyButton from "../myButton/MyButton";
+import MyButton from "components/shared/myButton/MyButton";
 import china from "assets/carousel/china.jpg";
 import spain from "assets/carousel/spain.jpg";
 import usa from "assets/carousel/usa.jpg";
 import style from "./Carousel.style";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
-export interface CarouselProps {}
+function Carousel() {
 
-function Carousel(props: CarouselProps) {
-  var settings = {
-    autoplay: true,
-    autoplaySpeed: 5000,
-    dots: false,
-    infinite: true,
-    speed: 900,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  const settings = {
+    autoPlay: true,
+    infinite:true,
+    autoPlayInterval: 3000,
+    disableButtonsControls: true,
+    disableDotsControls: true,
+    disableSlideInfo: true,
+    animationDuration:600,
+    animationEasingFunction:'ease-out'
+  }
 
   return (
     <section className={style.container} >
-      <Slider {...settings}>
+      <AliceCarousel {...settings}>
         <section>
           <div
             className={style.slide}
@@ -78,7 +79,7 @@ function Carousel(props: CarouselProps) {
             </div>
           </div>
         </section>
-      </Slider>
+      </AliceCarousel>
     </section>
   );
 }

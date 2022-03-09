@@ -123,9 +123,7 @@ function AccordionList() {
       {accordionItems.map(({ icon, label, content }, i) => (
         <MyAccordion
           key={i}
-          customClass={`${style.headerLayout} ${
-            i + 1 === accordionItems.length ? style.last : ""
-          }`}
+          customClass={`${style.headerLayout} ${i + 1 === accordionItems.length ? style.last : ""}`}
           header={renderMainAccordionHeader(icon, label)}
           children={content}
         />
