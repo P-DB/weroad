@@ -5,15 +5,23 @@ import MyButton from "components/shared/myButton/MyButton";
 import Carousel from "components/shared/carousel/Carousel";
 import AccordionList from "./components/accordionList/AccordionList";
 import Sidebar from "./components/sidebar/Sidebar";
+import { ReactComponent as IconShared } from "assets/icons/shared.svg";
+import { ReactComponent as IconBookmark } from "assets/icons/bookmark.svg";
 
 const renderMainContent = () => (
   <div className={style.wrapper}>
+    <div className={style.header}>
     <h1 className={style.title}>Marocco</h1>
     <p className={style.subtitle}>5 itinerari per questa destinazione</p>
+    </div>
     <picture className={style.img}>
       <source media="(min-width:700px)" srcSet={maroccoLG} />
       <img className={style.img} src={maroccoSM} alt="Marocco temple" />
     </picture>
+    <div className={style.actions}>
+      <p className={style.link}><IconShared className={style.linkIcon} />Condividi</p>
+      <p className={style.link}><IconBookmark className={style.linkIcon} />Aggiungi ai preferiti</p>
+    </div>
     <div className={style.content}>
       <MyButton
         customClass={style.button}
