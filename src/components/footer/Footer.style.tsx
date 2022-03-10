@@ -8,7 +8,7 @@ const FooterStyle = {
     button:'rounded-l-none',
     info:'text-center mt-4',
     infoSuggestion:'block text-sm text-gray-3',
-    social:'flex items-center my-9 lg:mb-0 mt-4',
+    social:'flex items-center my-9 lg:mb-0 lg:mt-4',
     instagram:'mx-6',
     links:'hidden max-w-6xl mx-auto my-12 px-3 lg:flex',
     col:'flex-1',

@@ -5,17 +5,20 @@ import style from "./Travels.style";
 function Travels() {
   const [travels, setTravels] = useState([]);
 
+  const fetchTravels = async () => {
+    const res = await fetch("https://staging-api-catalog.weroad.it/travels");
+    const json = await res.json();
+    setTravels(
+      json.data.filter((item: any) => item.destinationLabel === "Marocco")
+    );
+  };
+
   useEffect(() => {
-    fetch("https://staging-api-catalog.weroad.it/travels")
-      .then((res) => res.json())
-      .then((res) =>
-        setTravels(
-          res.data.filter((item: any) => item.destinationLabel === "Marocco")
-        )
-      )
-      .catch((error) => {
-        throw new Error(error);
-      });
+    try {
+      fetchTravels();
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   return (
